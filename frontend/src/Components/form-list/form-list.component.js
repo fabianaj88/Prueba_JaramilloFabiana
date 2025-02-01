@@ -23,23 +23,23 @@ const FormList = () => {
 
   <div>
       {!selectedFormId ? (
-        // Mostrar lista de formularios
+        
         <div>
           <h2>Lista de Formularios</h2>
           {forms.map((form) => (
             <button 
               key={form.id}
-              onClick={() => setSelectedFormId(form.id)} // Establecemos el formId seleccionado
+              onClick={() => setSelectedFormId(form.id)} 
             >
               {form.nombre}
             </button>
           ))}
         </div>
       ) : (
-        // Mostrar componente de edición
+        
         <FormInputEdit 
           formId={selectedFormId}
-          onClose={() => setSelectedFormId(null)} // Función para volver
+          onClose={() => setSelectedFormId(null)} 
         />
       )}
     </div>

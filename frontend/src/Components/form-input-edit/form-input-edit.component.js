@@ -23,7 +23,7 @@ const FormInputEdit = ({ formId, inputId }) => {
 
   return (
     <div>
-      <h2>Editando Formulario {formId}</h2>
+      <h2>Crear / Editar Inputs {formId}</h2>
       <input
         type="text"
         value={label}

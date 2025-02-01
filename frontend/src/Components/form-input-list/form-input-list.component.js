@@ -31,7 +31,7 @@ const FormInputList = ({ formId }) => {
   const handleCloseModal = () => {
     setShowModal(false);
     setSelectedInputId(null);
-    // Recargar la lista después de cerrar el modal
+   
     fetchInputs();
   };
 
