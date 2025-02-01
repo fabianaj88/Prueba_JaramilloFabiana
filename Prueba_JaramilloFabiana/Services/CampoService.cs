@@ -36,17 +36,7 @@ namespace Prueba_JaramilloFabiana.Services
             return await _repository.CreateAsync(campo);
         }
 
-        //public async Task<Campo> UpdateCampoAsync(int id, Campo campo)
-        //{
-        //    if (id != campo.Id)
-        //        throw new ArgumentException("ID no coincide con el campo a actualizar.");
-
-        //    var existingCampo = await _repository.GetByIdAsync(id);
-        //    if (existingCampo == null)
-        //        throw new KeyNotFoundException($"Campo con ID {id} no encontrado.");
-
-        //    return await _repository.UpdateAsync(campo);
-        //}
+        
         public async Task<Campo> UpdateCampoAsync(int id, Campo campo)
         {
             if (id != campo.Id)

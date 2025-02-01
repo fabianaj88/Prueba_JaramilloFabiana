@@ -29,7 +29,7 @@ namespace Prueba_JaramilloFabiana.Services
 
         public async Task<Registro> CreateAsync(Registro registro)
         {
-            // Aquí puedes agregar validaciones de negocio adicionales
+            
             if (registro.FormularioId == null)
                 throw new ArgumentException("FormularioId es requerido");
 
@@ -38,7 +38,7 @@ namespace Prueba_JaramilloFabiana.Services
 
         public async Task<Registro> UpdateAsync(Registro registro)
         {
-            // Aquí puedes agregar validaciones de negocio adicionales
+            
             var result = await _repository.UpdateAsync(registro);
             if (result == null)
                 throw new KeyNotFoundException($"Registro con Id {registro.Id} no encontrado");

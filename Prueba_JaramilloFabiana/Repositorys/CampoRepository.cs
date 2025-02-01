@@ -47,18 +47,18 @@ namespace Prueba_JaramilloFabiana.Repositorys
         public async Task DeleteAsync(int id)
         {
             var campo = await _context.Campos
-                .Include(c => c.Respuesta)  // Incluir las respuestas relacionadas
+                .Include(c => c.Respuesta)  
                 .FirstOrDefaultAsync(c => c.Id == id);
 
             if (campo != null)
             {
-                // Primero eliminar todas las respuestas relacionadas
+                
                 if (campo.Respuesta != null)
                 {
                     _context.Respuesta.RemoveRange(campo.Respuesta);
                 }
 
-                // Luego eliminar el campo
+                
                 _context.Campos.Remove(campo);
                 await _context.SaveChangesAsync();
             }
