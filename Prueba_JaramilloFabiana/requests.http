@@ -1,0 +1,141 @@
+﻿@baseUrl = https://localhost:7187/api
+@contentType = application/json
+
+### Formularios ###
+
+### Get all formularios
+GET {{baseUrl}}/Formularios
+Accept: {{contentType}}
+
+### Get formulario by id
+GET {{baseUrl}}/Formularios/1
+Accept: {{contentType}}
+
+### Create formulario
+POST {{baseUrl}}/Formularios
+Content-Type: {{contentType}}
+
+{
+    "nombre": "Personas",
+    "descripcion": "Formulario para registro de personas"
+}
+
+### Update formulario
+PUT {{baseUrl}}/Formularios/1
+Content-Type: {{contentType}}
+
+{
+    "id": 1,
+    "nombre": "Personas Actualizado",
+    "descripcion": "Formulario actualizado para registro de personas"
+}
+
+### Delete formulario
+DELETE {{baseUrl}}/Formularios/1
+
+
+### Campos ###
+
+### Get campos by formulario
+GET {{baseUrl}}/Campos/formulario/1
+Accept: {{contentType}}
+
+### Get campo by id
+GET {{baseUrl}}/Campos/1
+Accept: {{contentType}}
+
+### Create campo
+POST {{baseUrl}}/Campos
+Content-Type: {{contentType}}
+
+{
+    "formularioId": 1,
+    "nombre": "Nombre",
+    "tipo": "text"
+}
+
+### Update campo
+PUT {{baseUrl}}/Campos/3
+Content-Type: {{contentType}}
+
+{
+    "id": 3,
+    "formularioId": 1,
+    "nombre": "Apodo",
+    "tipo": "text"
+}
+
+### Delete campo
+DELETE {{baseUrl}}/Campos/1
+
+
+### Respuestas ###
+
+### Get respuestas by registro
+GET {{baseUrl}}/Respuestas/registro/1
+Accept: {{contentType}}
+
+### Get respuesta by id
+GET {{baseUrl}}/Respuestas/1
+Accept: {{contentType}}
+
+### Create respuesta
+POST {{baseUrl}}/Respuestas
+Content-Type: {{contentType}}
+
+{
+    "registroId": 1,
+    "campoId": 1,
+    "valor": "Juan Pérez"
+}
+
+### Update respuesta
+PUT {{baseUrl}}/Respuestas/1
+Content-Type: {{contentType}}
+
+{
+    "id": 1,
+    "registroId": 1,
+    "campoId": 1,
+    "valor": "Juan Pablo Pérez"
+}
+
+### Delete respuesta
+DELETE {{baseUrl}}/Respuestas/1
+
+
+### Cabeceras Respuesta ###
+
+### Get all cabeceras
+GET {{baseUrl}}/CabecerasRespuesta
+Accept: {{contentType}}
+
+### Get cabeceras by formulario
+GET {{baseUrl}}/CabecerasRespuesta/formulario/1
+Accept: {{contentType}}
+
+### Get cabecera by id
+GET {{baseUrl}}/CabecerasRespuesta/1
+Accept: {{contentType}}
+
+### Create cabecera
+POST {{baseUrl}}/CabecerasRespuesta
+Content-Type: {{contentType}}
+
+{
+    "formularioId": 1,
+    "fechaCreacion": "2024-01-30T10:00:00"
+}
+
+### Update cabecera
+PUT {{baseUrl}}/CabecerasRespuesta/1
+Content-Type: {{contentType}}
+
+{
+    "id": 1,
+    "formularioId": 1,
+    "fechaCreacion": "2024-01-30T10:00:00"
+}
+
+### Delete cabecera
+DELETE {{baseUrl}}/CabecerasRespuesta/1
